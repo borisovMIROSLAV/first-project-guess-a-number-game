@@ -4,10 +4,6 @@ function guessAnumber() {
         output: process.stdout,
     });
 
-    // rl.on('line', (line) => {
-        
-    // });
-
     let computerGuess = Math.floor(Math.random() * 100);
     let guess;
 
@@ -19,13 +15,13 @@ function guessAnumber() {
                 if (guess === computerGuess) {
                     console.log('You guessed it!');
                     return readline.close();
+                } else if (guess < computerGuess) {
+                    console.log('Too Low!');
+                    recursiveAsyncReadLine();
+                } else if (guess > computerGuess) {
+                    console.log('Too High!');
+                    recursiveAsyncReadLine();
                 }
-            } else if (guess < computerGuess) {
-                console.log('Too Low!');
-                recursiveAsyncReadLine();
-            } else if (guess > computerGuess) {
-                console.log('Too High!');
-                recursiveAsyncReadLine();
             } else {
                 console.log('Invalid Input! Try again...');
                 recursiveAsyncReadLine();
