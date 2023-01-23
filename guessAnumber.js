@@ -5,7 +5,7 @@ const rl = readline.createInterface({
 });
 
 rl.on('line', (line) => {
-    console.log(`Received: ${line}`);
+    
 });
 
 let computerGuess = Math.floor(Math.random() * 100);
