@@ -11,7 +11,7 @@ function guessAnumber() {
         readline.question('Guess the number(0-100): ', (number) => {
             playerGuess = Number(number);
 
-            if (playerGuess <= 100 && guess >= 0) {
+            if (playerGuess <= 100 && playerGuess >= 0) {
                 if (playerGuess === computerGuess) {
                     console.log('You guessed it!');
                     return readline.close();
