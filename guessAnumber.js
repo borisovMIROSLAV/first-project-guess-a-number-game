@@ -5,20 +5,20 @@ function guessAnumber() {
     });
 
     let computerGuess = Math.floor(Math.random() * 100);
-    let guess;
+    let playerGuess;
 
     let recursiveAsyncReadLine = function () {
         readline.question('Guess the number(0-100): ', (number) => {
-            guess = Number(number);
+            playerGuess = Number(number);
 
-            if (guess <= 100 && guess >= 0) {
-                if (guess === computerGuess) {
+            if (playerGuess <= 100 && guess >= 0) {
+                if (playerGuess === computerGuess) {
                     console.log('You guessed it!');
                     return readline.close();
-                } else if (guess < computerGuess) {
+                } else if (playerGuess < computerGuess) {
                     console.log('Too Low!');
                     recursiveAsyncReadLine();
-                } else if (guess > computerGuess) {
+                } else if (playerGuess > computerGuess) {
                     console.log('Too High!');
                     recursiveAsyncReadLine();
                 }
